@@ -4,12 +4,6 @@ const config = new DefaultConfig("falseAddons", "data/settings.json")
 
 config
     .addSwitch({
-        category: "General",
-        configName: "guitest",
-        title: "GUI Test",
-        description: "going to fucking kill myself", // this gui is the worst thing to ever exist in the history of the world
-    })
-    .addSwitch({
         category: "Dungeons",
         configName: "m3ff",
         title: "M3 Fire Freeze Notification",

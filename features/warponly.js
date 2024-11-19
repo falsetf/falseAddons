@@ -44,7 +44,6 @@ function initializeWarpOnly(player) {
     registerCommand(() => {
         ChatLib.chat('&b[&fFA&b] &fGetting party list');
         ChatLib.command('party list');
-        simulatePartyChat(); // debug command
     }, 500);
 
     // disband party

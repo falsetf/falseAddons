@@ -1,15 +1,5 @@
 [
     {
-        "category": "General",
-        "settings": [
-            {
-                "type": 6,
-                "name": "guitest",
-                "value": true
-            }
-        ]
-    },
-    {
         "category": "Dungeons",
         "settings": [
             {

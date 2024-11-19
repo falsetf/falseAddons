@@ -1,0 +1,8 @@
+{
+    "name": "falseAddons",
+    "author": "false",
+    "description": "",
+    "version": "1.0.0",
+    "entry":"index.js",
+    "requires":["Amaterasu"]
+}

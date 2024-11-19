@@ -1,0 +1,67 @@
+[
+    {
+        "category": "General",
+        "settings": [
+            {
+                "type": 6,
+                "name": "guitest",
+                "value": true
+            }
+        ]
+    },
+    {
+        "category": "Dungeons",
+        "settings": [
+            {
+                "type": 6,
+                "name": "m3ff",
+                "value": true
+            }
+        ]
+    },
+    {
+        "category": "Party",
+        "settings": [
+            {
+                "type": 6,
+                "name": "politekick",
+                "value": true
+            },
+            {
+                "type": 6,
+                "name": "warponly",
+                "value": true
+            },
+            {
+                "type": 6,
+                "name": "dmparty",
+                "value": true
+            },
+            {
+                "type": 6,
+                "name": "blacklistActive",
+                "value": false
+            },
+            {
+                "type": 4,
+                "name": "dmpartyblacklist",
+                "value": "Quektos"
+            }
+        ]
+    },
+    {
+        "category": "Mining",
+        "settings": [
+            {
+                "type": 6,
+                "name": "glacitetunnelnotification",
+                "value": true
+            },
+            {
+                "type": 6,
+                "name": "abilitynotif",
+                "value": true
+            }
+        ]
+    }
+]

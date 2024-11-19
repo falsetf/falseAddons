@@ -1,7 +1,5 @@
 import Settings from '../config.js';
-import { getIGN } from '../utils/functions.js';
-import { registerCommand } from '../utils/functions.js';
-import { simulatePartyChat } from '../utils/PartyUtils.js';
+import { getIGN, registerCommand } from '../utils/functions.js';
 
 let warpPlayer = '';
 let otherMembers = [];
@@ -24,7 +22,7 @@ register("command", (player) => {
 register("chat", (unfilteredMessage) => {
     if (!Settings().warponly) return;
     
-    // Extract the actual player name before "!warponly"
+    // extract the actual player name before "!warponly"
     let player = unfilteredMessage.split('!warponly')[0].trim();
     
     initializeWarpOnly(player);

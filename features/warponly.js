@@ -8,6 +8,7 @@ let isWaitingForJoin = false;
 let isWaitingForWarp = false;
 let partyMembersList = new Set(); 
 let partyLeader = ''; 
+let validPartyLeader = false;
 
 register("command", (player) => {
     if (!Settings().warponly) return;
@@ -15,7 +16,6 @@ register("command", (player) => {
         ChatLib.chat('&b[&fFA&b] &cPlease specify a player to warp!');
         return;
     }
-
     initializeWarpOnly(player);
 }).setName("warponly").setAliases(["wo"]);
 
@@ -24,8 +24,9 @@ register("chat", (unfilteredMessage) => {
     
     // extract the actual player name before "!warponly"
     let player = unfilteredMessage.split('!warponly')[0].trim();
+    let filteredPlayer = getIGN(player);
     
-    initializeWarpOnly(player);
+    initializeWarpOnly(filteredPlayer);
 
 }).setChatCriteria("Party > ${unfilteredMessage}: !warponly").setContains();
 
@@ -37,11 +38,20 @@ function initializeWarpOnly(player) {
     lastAttemptTime = Date.now();
     isWaitingForJoin = false;
     isWaitingForWarp = false;
+    validPartyLeader = false;
 
     // get party list
     registerCommand(() => {
         ChatLib.chat('&b[&fFA&b] &fGetting party list');
         ChatLib.command('party list');
+    }, 500);
+
+    // check if the person running the command is the party leader, if not, return
+    setTimeout(() => {
+        if (!validPartyLeader) {
+            ChatLib.chat('&b[&fFA&b] &cYou are not the party leader, cancelling warp.');
+            return;
+        }
     }, 500);
 
     // disband party
@@ -61,6 +71,13 @@ function initializeWarpOnly(player) {
 register("chat", (leader, e) => {
     if (Date.now() - lastAttemptTime > 2000) return;
     partyLeader = getIGN(leader);
+
+    // check to verify if the current user is the party leader
+    if (partyLeader.toLowerCase() == Player.getName().toLowerCase()) {
+        validPartyLeader = true;
+    } else {
+        validPartyLeader = false;
+    } // probably not necessary, but might as well
 }).setChatCriteria("Party Leader: ${leader}");
 
 register("chat", (mode, names, e) => {
@@ -87,7 +104,7 @@ register("chat", (mode, names, e) => {
 
 register("chat", (player, e) => {
     if (!isWaitingForJoin) return;
-    if (player.toLowerCase() !== warpPlayer) return;
+    if (getIGN(player.toLowerCase()) !== warpPlayer) return;
 
     isWaitingForJoin = false;
     isWaitingForWarp = true;
@@ -96,7 +113,7 @@ register("chat", (player, e) => {
         ChatLib.chat('&b[&fFA&b] &fWarping party');
         ChatLib.command('party warp');
     }, 500);
-}).setChatCriteria("${player} joined the party.");
+}).setChatCriteria("${player} joined the party.").setContains();
 
 register("chat", (e) => {
     if (!isWaitingForWarp) return;
@@ -118,4 +135,4 @@ register("chat", (e) => {
             }
         }, index * 500);
     });
-}).setChatCriteria("warped to your server").setContains();
+}).setChatCriteria("SkyBlock Party Warp (1 player)").setContains();

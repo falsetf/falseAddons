@@ -20,8 +20,10 @@ export function getIGN(player) {
     // early return if input is empty or null
     if (!player) return "";
 
-    // remove suffixes that are not legal IGN symbols
-    const cleanedIgn = player.replace(/[^0-9A-Za-z_]+$/, "");
+    // remove rank prefixes and suffixes
+    const cleanedIgn = player
+        .replace(/^(\[.*?\]\s*)?/, '')  // Remove rank prefix
+        .replace(/[^0-9A-Za-z_]+$/, "");  // Remove non-IGN suffixes
 
     // extract the last valid IGN segment
     const ignMatch = cleanedIgn.match(/[0-9A-Za-z_]+$/);

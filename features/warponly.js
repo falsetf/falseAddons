@@ -22,9 +22,9 @@ register("command", (player) => {
 register("chat", (unfilteredMessage) => {
     if (!Settings().warponly) return;
     
-    // extract the actual player name before "!warponly"
-    let player = unfilteredMessage.split('!warponly')[0].trim();
-    let filteredPlayer = getIGN(player);
+    // remove "Party > " prefix, then get the player name before the command
+    let messageText = unfilteredMessage.replace(/^Party > /, '').split(': !warponly')[0].trim();
+    let filteredPlayer = getIGN(messageText);
     
     initializeWarpOnly(filteredPlayer);
 
@@ -46,26 +46,24 @@ function initializeWarpOnly(player) {
         ChatLib.command('party list');
     }, 500);
 
-    // check if the person running the command is the party leader, if not, return
     setTimeout(() => {
-        if (!validPartyLeader) {
+        if (validPartyLeader) {
+            // disband party
+            registerCommand(() => {
+                ChatLib.chat('&b[&fFA&b] &fDisbanding party');
+                ChatLib.command('party disband');
+            }, 1000);
+    
+            // party the warp player
+            registerCommand(() => {
+                ChatLib.chat(`&b[&fFA&b] &fPartying ${warpPlayer} for warp`);
+                ChatLib.command(`party ${warpPlayer}`);
+                isWaitingForJoin = true;
+            }, 1500);
+        } else{
             ChatLib.chat('&b[&fFA&b] &cYou are not the party leader, cancelling warp.');
-            return;
         }
-    }, 500);
-
-    // disband party
-    registerCommand(() => {
-        ChatLib.chat('&b[&fFA&b] &fDisbanding party');
-        ChatLib.command('party disband');
-    }, 1000);
-
-    // party the warp player
-    registerCommand(() => {
-        ChatLib.chat(`&b[&fFA&b] &fPartying ${warpPlayer} for warp`);
-        ChatLib.command(`party ${warpPlayer}`);
-        isWaitingForJoin = true;
-    }, 1500);
+    }, 1000)
 }
 
 register("chat", (leader, e) => {
@@ -120,19 +118,21 @@ register("chat", (e) => {
     isWaitingForWarp = false;
 
     // party everyone else 
-    otherMembers.forEach((player, index) => {
-        registerCommand(() => {
-            ChatLib.chat(`&b[&fFA&b] &fPartying ${player}`);
-            ChatLib.command(`party ${player}`);
-            
-            // reset states
-            if (index === otherMembers.length - 1) {
-                warpPlayer = '';
-                otherMembers = [];
-                partyMembersList.clear();
-                partyLeader = '';
-                lastAttemptTime = 0;
-            }
-        }, index * 500);
-    });
+    setTimeout(() => {
+        otherMembers.forEach((player, index) => {
+            registerCommand(() => {
+                ChatLib.chat(`&b[&fFA&b] &fPartying ${player}`);
+                ChatLib.command(`party ${player}`);
+                
+                // reset states
+                if (index === otherMembers.length - 1) {
+                    warpPlayer = '';
+                    otherMembers = [];
+                    partyMembersList.clear();
+                    partyLeader = '';
+                    lastAttemptTime = 0;
+                }
+            }, index * 500);
+        });
+    },500);
 }).setChatCriteria("SkyBlock Party Warp (1 player)").setContains();

@@ -1,5 +1,15 @@
 [
     {
+        "category": "General",
+        "settings": [
+            {
+                "type": 6,
+                "name": "minionstfu",
+                "value": false
+            }
+        ]
+    },
+    {
         "category": "Dungeons",
         "settings": [
             {

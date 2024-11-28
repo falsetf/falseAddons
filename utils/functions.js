@@ -39,3 +39,25 @@ export function getIGN(player) {
 
     return "";
 }
+
+export function getScoreboardInfo() {
+    let completion = 0;
+    let scoreboardLines = Scoreboard.getLines();
+    
+    // Print each cleaned line
+    for (let line of scoreboardLines) {
+        let cleanedLine = ChatLib.removeFormatting(line.toString()).replace(/[^\x00-\x7F]/g, "");
+        
+        // Log or print each cleaned line
+        console.log(cleanedLine);
+        
+        if (cleanedLine.includes('Cleared:')) {
+            let parts = cleanedLine.split(' ');
+            let partString = parts[1].substring(0, parts[1].length - 1)
+            completion = parseInt(partString);
+            break;
+        }
+    }
+    
+    return completion;
+}

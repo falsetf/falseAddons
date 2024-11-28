@@ -4,6 +4,12 @@ const config = new DefaultConfig("falseAddons", "data/settings.json")
 
 config
     .addSwitch({
+        category: "General",
+        configName: "minionstfu",
+        title: "stfu",
+        description: "mutes slime minions on your island",
+    })
+    .addSwitch({
         category: "Dungeons",
         configName: "m3ff",
         title: "M3 Fire Freeze Notification",

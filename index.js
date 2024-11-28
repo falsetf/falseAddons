@@ -5,5 +5,6 @@ import "./features/warponly.js"
 import "./features/glacitetunnelnotification.js"
 import "./features/abilitynotif.js"
 import "./features/dmparty.js"
+import "./features/minionstfu.js"
 
 register ("command", () => ChatLib.command("joininstance CATACOMBS_ENTRANCE")).setName("f0") // very important for entrance pb runs

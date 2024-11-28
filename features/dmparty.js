@@ -17,8 +17,3 @@ register("chat", (player, message, e) => {
         return;
     }
 }).setChatCriteria("From ${player}: ${message}");
-
-// debug command
-register("command", () => {
-    ChatLib.simulateChat("From [MVP+] Quektos: !p");
-}).setName("dmparty");

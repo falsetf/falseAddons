@@ -1,14 +1,32 @@
 import Settings from "../config.js"
 import { getTabList } from "../../BloomCore/utils/Utils.js";
 
-register("soundPlay", (position, name, volume, pitch, name2, event) => {
-    if (!Settings().minionstfu) return;
-    getTabList(true).forEach((line) => {
-        if (line.includes("Private Island")){
-            if (name == "mob.slime.big" || name == "mob.slime.small" || name == "mob.slime.attack"){
-                cancel(event);
-            }
-        }
-    });
-}).setCriteria("mob.slime.big", "mob.slime.small", "mob.slime.attack") // this is possibly incredibly inefficient and probably sucks
+let stfu = false;
 
+register("chat", ()=> {
+    stfu = false; // reset state
+    setTimeout(() => {
+        getTabList(true).forEach((line) => {
+            if (line.includes("Private Island")){
+                stfu = true;
+            }
+        });
+    }, 2000);
+}).setChatCriteria("Sending to server ").setContains(); // because worldLoad blows hail-sized chunks out of its own ass, and so does the documentation for it
+
+register("soundPlay", (position, name, volume, pitch, name2, event) => {
+    if (!Settings().minionstfu || !stfu ) return;
+    cancel(event);
+}).setCriteria("mob.slime.big") 
+
+register("soundPlay", (position, name, volume, pitch, name2, event) => {
+    if (!Settings().minionstfu || !stfu ) return;
+    cancel(event);
+}).setCriteria("mob.slime.small") 
+
+register("soundPlay", (position, name, volume, pitch, name2, event) => {
+    if (!Settings().minionstfu || !stfu ) return;
+    cancel(event);
+}).setCriteria("mob.slime.attack") 
+
+// why cant i use setcriteria with multiple criterions? 

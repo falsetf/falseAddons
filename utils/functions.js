@@ -22,8 +22,8 @@ export function getIGN(player) {
 
     // remove rank prefixes and suffixes
     const cleanedIgn = player
-        .replace(/^(\[.*?\]\s*)?/, '')  // Remove rank prefix
-        .replace(/[^0-9A-Za-z_]+$/, "");  // Remove non-IGN suffixes
+        .replace(/^(\[.*?\]\s*)?/, '')  // remove rank prefix
+        .replace(/[^0-9A-Za-z_]+$/, "");  // remove non-IGN suffixes
 
     // extract the last valid IGN segment
     const ignMatch = cleanedIgn.match(/[0-9A-Za-z_]+$/);
@@ -38,26 +38,4 @@ export function getIGN(player) {
     }, 50);
 
     return "";
-}
-
-export function getScoreboardInfo() {
-    let completion = 0;
-    let scoreboardLines = Scoreboard.getLines();
-    
-    // Print each cleaned line
-    for (let line of scoreboardLines) {
-        let cleanedLine = ChatLib.removeFormatting(line.toString()).replace(/[^\x00-\x7F]/g, "");
-        
-        // Log or print each cleaned line
-        console.log(cleanedLine);
-        
-        if (cleanedLine.includes('Cleared:')) {
-            let parts = cleanedLine.split(' ');
-            let partString = parts[1].substring(0, parts[1].length - 1)
-            completion = parseInt(partString);
-            break;
-        }
-    }
-    
-    return completion;
 }

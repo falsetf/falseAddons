@@ -12,7 +12,7 @@ register("chat", ()=> {
             }
         });
     }, 2000);
-}).setChatCriteria("Sending to server ").setContains(); // because worldLoad blows hail-sized chunks out of its own ass, and so does the documentation for it
+}).setChatCriteria("Sending to server ").setContains();
 
 register("soundPlay", (position, name, volume, pitch, name2, event) => {
     if (!Settings().minionstfu || !stfu ) return;

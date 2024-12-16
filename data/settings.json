@@ -6,6 +6,11 @@
                 "type": 6,
                 "name": "minionstfu",
                 "value": true
+            },
+            {
+                "type": 6,
+                "name": "dragonstfu",
+                "value": true
             }
         ]
     },

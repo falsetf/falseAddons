@@ -10,6 +10,12 @@ config
         description: "mutes slime minions on your island",
     })
     .addSwitch({
+        category: "General",
+        configName: "dragonstfu",
+        title: "stfu",
+        description: "mutes dragons in the end",
+    })
+    .addSwitch({
         category: "Dungeons",
         configName: "m3ff",
         title: "M3 Fire Freeze Notification",

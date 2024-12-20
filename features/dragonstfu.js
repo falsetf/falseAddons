@@ -52,9 +52,4 @@ register("soundPlay", (position, name, volume, pitch, name2, event) => {
     cancel(event);
 }).setCriteria("mob.blaze.breath"); // for young dragon
 
-register("soundPlay", (position, name, volume, pitch, name2, event) => {
-    if (!Settings().dragonstfu || !dragonstfu || !eyePlaced) return;
-    cancel(event);
-}).setCriteria("random.eat");
-
 // i wish i could set a forEach for this because this looks hideous, but i guess ct doesn't support it

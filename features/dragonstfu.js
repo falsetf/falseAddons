@@ -19,26 +19,42 @@ register("chat", ()=> {
 // detect when last summoning eye is placed
 register("chat", () => {
     eyePlaced = true;
-}).setChatCriteria("placed a Summoning eye! Brace yourselves! (8/8)").setContains();
+}).setChatCriteria("placed a Summoning Eye! Brace yourselves! &r&7(&r&a8&r&7/&r&a8&r&7)&r").setContains();
 
 // detect when final blow is dealt
 register("chat", () => {
     eyePlaced = false;
     dragonstfu = false;
-}).setChatCriteria("dealt the final blow").setContains();
+}).setChatCriteria("dealt the final blow.").setContains();
 
-// sounds to cancel
-const dragonSounds = [
-    "mob.enderdragon.end",
-    "mob.enderdragon.growl", 
-    "mob.enderdragon.hit", 
-    "mob.enderdragon.wings"
-];
+register("soundPlay", (position, name, volume, pitch, name2, event) => {
+    if (!Settings().dragonstfu || !dragonstfu || !eyePlaced) return;
+    cancel(event);
+}).setCriteria("mob.enderdragon.end");
 
-dragonSounds.forEach(sound => {
-    register("soundPlay", (position, name, volume, pitch, name2, event) => {
-        // only cancel sound if last eye has been placed and dragonstfu is true
-        if (!Settings().dragonstfu || !dragonstfu || !eyePlaced) return;
-        cancel(event);
-    }).setCriteria(sound);
-});
+register("soundPlay", (position, name, volume, pitch, name2, event) => {
+    if (!Settings().dragonstfu || !dragonstfu || !eyePlaced) return;
+    cancel(event);
+}).setCriteria("mob.enderdragon.growl");
+
+register("soundPlay", (position, name, volume, pitch, name2, event) => {
+    if (!Settings().dragonstfu || !dragonstfu || !eyePlaced) return;
+    cancel(event);
+}).setCriteria("mob.enderdragon.hit");
+
+register("soundPlay", (position, name, volume, pitch, name2, event) => {
+    if (!Settings().dragonstfu || !dragonstfu || !eyePlaced) return;
+    cancel(event);
+}).setCriteria("mob.enderdragon.wings");
+
+register("soundPlay", (position, name, volume, pitch, name2, event) => {
+    if (!Settings().dragonstfu || !dragonstfu || !eyePlaced) return;
+    cancel(event);
+}).setCriteria("mob.blaze.breath"); // for young dragon
+
+register("soundPlay", (position, name, volume, pitch, name2, event) => {
+    if (!Settings().dragonstfu || !dragonstfu || !eyePlaced) return;
+    cancel(event);
+}).setCriteria("random.eat");
+
+// i wish i could set a forEach for this because this looks hideous, but i guess ct doesn't support it

@@ -1,19 +1,30 @@
 import Settings from "../config.js"
 import { getIGN } from '../utils/functions.js';
 
+function getBlacklistArray() {
+    const blacklistString = Settings().dmpartyblacklist;
+    if (!blacklistString) return [];
+    
+    // split by commas and remove any whitespace
+    return blacklistString.split(',').map(name => name.trim()).filter(name => name.length > 0);
+}
+
 register("chat", (player, message, e) => {
-    formattedPlayer = getIGN(player);
+    const formattedPlayer = getIGN(player);
+    
     if (!Settings().dmparty) return;
-    if (Settings().blacklistActive){
-        if (Settings().dmpartyblacklist.includes(formattedPlayer)){
+    
+    if (Settings().blacklistActive) {
+        const blacklistedPlayers = getBlacklistArray();
+        
+        if (blacklistedPlayers.includes(formattedPlayer)) {
             ChatLib.chat(`&b[&fFA&b] &c${formattedPlayer} is blacklisted!`);
             return;
         }
     }
-    if (message === "!p"){
+    
+    if (message.includes("!p")) {
         ChatLib.command(`party ${formattedPlayer}`);
         ChatLib.chat(`&b[&fFA&b] &fPartying ${formattedPlayer}`);
-    } else {
-        return;
     }
 }).setChatCriteria("From ${player}: ${message}");

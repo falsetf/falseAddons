@@ -50,7 +50,7 @@ config
         category: "Party",
         configName: "dmpartyblacklist",
         title: "Blacklisted Players",
-        description: "players blacklisted from using !p",
+        description: "players blacklisted from using !p (use commas to separate names)",
         subcategory: "Blacklist",
         shouldShow(data){
             return data.blacklistActive
@@ -69,6 +69,5 @@ config
         description: "Notifies you when MSB/Pickobulus is available",
     })
 
-const mySettings = new Settings("falseAddons", config, "data/ColorScheme.json")
-.setCommand("falseaddons", ["fa", "false"])
+const mySettings = new Settings("falseAddons", config, "data/ColorScheme.json").setCommand("falseaddons", ["fa", "false", "falseaddons"])
 export default () => mySettings.settings

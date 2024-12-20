@@ -5,12 +5,12 @@
             {
                 "type": 6,
                 "name": "minionstfu",
-                "value": true
+                "value": false
             },
             {
                 "type": 6,
                 "name": "dragonstfu",
-                "value": true
+                "value": false
             }
         ]
     },
@@ -20,7 +20,7 @@
             {
                 "type": 6,
                 "name": "m3ff",
-                "value": true
+                "value": false
             }
         ]
     },
@@ -30,17 +30,17 @@
             {
                 "type": 6,
                 "name": "politekick",
-                "value": true
+                "value": false
             },
             {
                 "type": 6,
                 "name": "warponly",
-                "value": true
+                "value": false
             },
             {
                 "type": 6,
                 "name": "dmparty",
-                "value": true
+                "value": false
             },
             {
                 "type": 6,
@@ -50,7 +50,7 @@
             {
                 "type": 4,
                 "name": "dmpartyblacklist",
-                "value": "Quektos"
+                "value": ""
             }
         ]
     },
@@ -60,12 +60,12 @@
             {
                 "type": 6,
                 "name": "glacitetunnelnotification",
-                "value": true
+                "value": false
             },
             {
                 "type": 6,
                 "name": "abilitynotif",
-                "value": true
+                "value": false
             }
         ]
     }

@@ -25,6 +25,5 @@ register("chat", (player, message, e) => {
     
     if (message.includes("!p")) {
         ChatLib.command(`party ${formattedPlayer}`);
-        ChatLib.chat(`&b[&fFA&b] &fPartying ${formattedPlayer}`);
     }
 }).setChatCriteria("From ${player}: ${message}");

@@ -4,6 +4,15 @@ import { getTabList } from "../../BloomCore/utils/Utils.js";
 let dragonstfu = false;
 let eyePlaced = false;
 
+const ender_dragon_noises = [
+    "mob.enderdragon.death",
+    "mob.enderdragon.end",
+    "mob.enderdragon.growl",
+    "mob.enderdragon.hit",
+    "mob.enderdragon.wings",
+    "mob.ghast.fireball" // for young dragon
+]
+
 register("chat", ()=> {
     dragonstfu = false; // reset state
     eyePlaced = false; // reset state
@@ -29,27 +38,7 @@ register("chat", () => {
 
 register("soundPlay", (position, name, volume, pitch, name2, event) => {
     if (!Settings().dragonstfu || !dragonstfu || !eyePlaced) return;
-    cancel(event);
-}).setCriteria("mob.enderdragon.end");
-
-register("soundPlay", (position, name, volume, pitch, name2, event) => {
-    if (!Settings().dragonstfu || !dragonstfu || !eyePlaced) return;
-    cancel(event);
-}).setCriteria("mob.enderdragon.growl");
-
-register("soundPlay", (position, name, volume, pitch, name2, event) => {
-    if (!Settings().dragonstfu || !dragonstfu || !eyePlaced) return;
-    cancel(event);
-}).setCriteria("mob.enderdragon.hit");
-
-register("soundPlay", (position, name, volume, pitch, name2, event) => {
-    if (!Settings().dragonstfu || !dragonstfu || !eyePlaced) return;
-    cancel(event);
-}).setCriteria("mob.enderdragon.wings");
-
-register("soundPlay", (position, name, volume, pitch, name2, event) => {
-    if (!Settings().dragonstfu || !dragonstfu || !eyePlaced) return;
-    cancel(event);
-}).setCriteria("mob.blaze.breath"); // for young dragon
-
-// i wish i could set a forEach for this because this looks hideous, but i guess ct doesn't support it
+    if (ender_dragon_noises.includes(name)) {
+        cancel(event);
+    }
+});

@@ -11,12 +11,12 @@ register("command", (...players) => {
     validMembers = [];
 
     registerCommand(() => {
-        ChatLib.chat('&b[&fFA&b] &fGetting party list');
+        //ChatLib.chat('&b[&fFA&b] &fGetting party list');
         ChatLib.command('party list');
     }, 500);
 
     registerCommand(() => {
-        ChatLib.chat('&b[&fFA&b] &fDisbanding party');
+        //ChatLib.chat('&b[&fFA&b] &fDisbanding party');
         ChatLib.command('party disband');
     }, 500);
 
@@ -41,7 +41,7 @@ register("chat", (mode, names, e) => {
 
     validMembers.forEach((player, index) => {
         registerCommand(() => {
-            ChatLib.chat(`&b[&fFA&b] &fPartying ${player}`);
+            //ChatLib.chat(`&b[&fFA&b] &fPartying ${player}`);
             ChatLib.command(`party ${player}`);
             
             // reset state after the last command

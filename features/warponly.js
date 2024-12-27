@@ -42,7 +42,7 @@ function initializeWarpOnly(player) {
 
     // get party list
     registerCommand(() => {
-        ChatLib.chat('&b[&fFA&b] &fGetting party list');
+        //ChatLib.chat('&b[&fFA&b] &fGetting party list');
         ChatLib.command('party list');
     }, 500);
 
@@ -50,13 +50,13 @@ function initializeWarpOnly(player) {
         if (validPartyLeader) {
             // disband party
             registerCommand(() => {
-                ChatLib.chat('&b[&fFA&b] &fDisbanding party');
+                //ChatLib.chat('&b[&fFA&b] &fDisbanding party');
                 ChatLib.command('party disband');
             }, 1000);
     
             // party the warp player
             registerCommand(() => {
-                ChatLib.chat(`&b[&fFA&b] &fPartying ${warpPlayer} for warp`);
+                //ChatLib.chat(`&b[&fFA&b] &fPartying ${warpPlayer} for warp`);
                 ChatLib.command(`party ${warpPlayer}`);
                 isWaitingForJoin = true;
             }, 1500);
@@ -108,7 +108,7 @@ register("chat", (player, e) => {
     isWaitingForWarp = true;
     
     registerCommand(() => {
-        ChatLib.chat('&b[&fFA&b] &fWarping party');
+        //ChatLib.chat('&b[&fFA&b] &fWarping party');
         ChatLib.command('party warp');
     }, 500);
 }).setChatCriteria("${player} joined the party.").setContains();
@@ -121,7 +121,7 @@ register("chat", (e) => {
     setTimeout(() => {
         otherMembers.forEach((player, index) => {
             registerCommand(() => {
-                ChatLib.chat(`&b[&fFA&b] &fPartying ${player}`);
+                //ChatLib.chat(`&b[&fFA&b] &fPartying ${player}`);
                 ChatLib.command(`party ${player}`);
                 
                 // reset states

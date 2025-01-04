@@ -22,6 +22,12 @@ config
         description: "tells you when to use your fire freeze staff",
     }) // kinda crazy i have to add this, only other option is to use coleweight or soopy
     .addSwitch({
+        category: "Dungeons",
+        configName: "skyblocker",
+        title: "skyblocker hater",
+        description: "automatically blocks and kicks skyblocker users when their shitty little mod posts in chat",
+    })
+    .addSwitch({
         category: "Party",
         configName: "politekick",
         title: "Polite Kick",

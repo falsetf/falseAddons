@@ -21,6 +21,11 @@
                 "type": 6,
                 "name": "m3ff",
                 "value": true
+            },
+            {
+                "type": 6,
+                "name": "skyblocker",
+                "value": false
             }
         ]
     },

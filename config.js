@@ -74,6 +74,12 @@ config
         title: "Mining Ability Notification",
         description: "Notifies you when MSB/Pickobulus is available",
     })
+    .addSwitch({
+        category: "Farming",
+        configName: "contestnotifier",
+        title: "Contest Notifier",
+        description: "allows you to automatically respond to players who message you during a Jacob's Farming Contest",
+    })
 
 const mySettings = new Settings("falseAddons", config, "data/ColorScheme.json").setCommand("falseaddons", ["fa", "false", "falseaddons"])
 export default () => mySettings.settings

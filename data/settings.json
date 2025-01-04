@@ -73,5 +73,15 @@
                 "value": true
             }
         ]
+    },
+    {
+        "category": "Farming",
+        "settings": [
+            {
+                "type": 6,
+                "name": "contestnotifier",
+                "value": false
+            }
+        ]
     }
 ]

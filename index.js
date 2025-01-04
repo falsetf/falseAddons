@@ -8,6 +8,7 @@ import "./features/dmparty.js"
 import "./features/minionstfu.js"
 import "./features/dragonstfu.js"
 import "./features/skyblocker.js"
+import "./features/contestnotifier.js"
 
 register ("command", () => ChatLib.command("joininstance CATACOMBS_ENTRANCE")).setName("f0") // very important for entrance pb runs
 register ("command", () => ChatLib.command("joininstance KUUDRA_NORMAL")).setName("t1")

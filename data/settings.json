@@ -80,7 +80,7 @@
             {
                 "type": 6,
                 "name": "contestnotifier",
-                "value": false
+                "value": true
             }
         ]
     }

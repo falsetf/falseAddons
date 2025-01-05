@@ -1,7 +1,7 @@
 {
     "name": "falseAddons",
     "author": "false",
-    "description": "",
+    "description": "few useful features",
     "version": "1.0.0",
     "entry":"index.js",
     "requires":["Amaterasu", "BloomCore", "PromiseV2"]

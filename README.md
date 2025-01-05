@@ -12,3 +12,4 @@ chattriggers module for Hypixel Skyblock
 
 ## credits
 DocilElm's [Amaterasu](https://github.com/DocilElm/Amaterasu) for the gui library
+UnclaimedBloom6's [BloomCore](https://github.com/UnclaimedBloom6) for creating a very useful library for interacting with skyblock

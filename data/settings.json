@@ -26,6 +26,11 @@
                 "type": 6,
                 "name": "skyblocker",
                 "value": false
+            },
+            {
+                "type": 6,
+                "name": "lividsolver",
+                "value": true
             }
         ]
     },

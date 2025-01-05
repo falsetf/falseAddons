@@ -28,6 +28,12 @@ config
         description: "automatically blocks and kicks skyblocker users when their shitty little mod posts in chat",
     })
     .addSwitch({
+        category: "Dungeons",
+        configName: "lividsolver",
+        title: "Livid Solver",
+        description: "finds the correct livid, draws a box around him, and draws a line from your crosshair to livid"
+    })
+    .addSwitch({
         category: "Party",
         configName: "politekick",
         title: "Polite Kick",

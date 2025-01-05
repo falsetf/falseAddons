@@ -35,7 +35,7 @@ register("chat", (name) => {
         });
         
         timeoutId = setTimeout(() => {
-            Client.showTitle("", "", 0, 1, 0); // clear title once keybind pressed, shouldnt be needed because 100 ticks is 5 seconds, which is the timoeut, but, just in case
+            Client.showTitle("", "", 0, 1, 0); // clear title once keybind pressed, shouldnt be needed because 100 ticks is 5 seconds, which is the timeout, but, just in case
             resolve('timeout');
         }, 5000);
     })

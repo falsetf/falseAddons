@@ -34,6 +34,12 @@ config
         description: "finds the correct livid, draws a box around him, and draws a line from your crosshair to livid"
     })
     .addSwitch({
+        category: "Dungeons",
+        configName: "deathsound",
+        title: "Death Sound",
+        description: "plays a quiet sound when anyone dies in dungeons, makes it easier to notice deaths",
+    })
+    .addSwitch({
         category: "Party",
         configName: "politekick",
         title: "Polite Kick",

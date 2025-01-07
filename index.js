@@ -10,6 +10,7 @@ import "./features/dragonstfu.js"
 import "./features/skyblocker.js"
 import "./features/contestnotifier.js"
 import "./features/lividsolver.js"
+import "./features/deathsound.js"
 
 register ("command", () => ChatLib.command("joininstance CATACOMBS_ENTRANCE")).setName("f0") // very important for entrance pb runs
 register ("command", () => ChatLib.command("joininstance KUUDRA_NORMAL")).setName("t1")

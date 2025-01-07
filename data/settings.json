@@ -31,6 +31,11 @@
                 "type": 6,
                 "name": "lividsolver",
                 "value": true
+            },
+            {
+                "type": 6,
+                "name": "deathsound",
+                "value": true
             }
         ]
     },

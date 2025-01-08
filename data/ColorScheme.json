@@ -39,10 +39,10 @@
     "Button1": {
         "background": {
             "color": [
-                50,
-                50,
-                50,
-                255
+                255,
+                255,
+                255,
+                0
             ],
             "outlineColor": [
                 255,
@@ -64,18 +64,18 @@
         },
         "text": {
             "color": [
-                200,
-                200,
-                200,
+                241,
+                243,
+                244,
                 255
             ],
             "scale": 1,
             "format": "",
             "centered": false,
             "selectedColor": [
-                35,
-                130,
-                219,
+                115,
+                164,
+                253,
                 255
             ]
         },
@@ -84,7 +84,7 @@
                 200,
                 200,
                 200,
-                255
+                0
             ],
             "type": "OUT_EXP",
             "time": 0.2
@@ -94,7 +94,7 @@
                 200,
                 200,
                 200,
-                255
+                0
             ],
             "type": "OUT_EXP",
             "time": 0.5
@@ -104,7 +104,7 @@
                 50,
                 50,
                 50,
-                255
+                0
             ],
             "type": "OUT_EXP",
             "time": 0.5
@@ -145,10 +145,10 @@
         },
         "mouseEnterAnimation": {
             "color": [
-                0,
-                0,
-                0,
-                80
+                241,
+                243,
+                244,
+                255
             ],
             "type": "OUT_EXP",
             "time": 0.5,
@@ -211,16 +211,16 @@
     "Switch": {
         "background": {
             "enabledColor": [
-                255,
-                255,
-                255,
-                80
+                115,
+                164,
+                253,
+                255
             ],
             "disabledColor": [
-                0,
-                0,
-                0,
-                80
+                30,
+                33,
+                39,
+                255
             ],
             "outlineColor": [
                 255,
@@ -229,20 +229,20 @@
                 255
             ],
             "outlineSize": 0,
-            "roundness": 3
+            "roundness": 2
         },
         "switchbox": {
             "enabledColor": [
-                0,
-                0,
-                0,
-                80
+                255,
+                255,
+                255,
+                255
             ],
             "disabledColor": [
-                0,
-                0,
-                0,
-                80
+                255,
+                255,
+                255,
+                255
             ],
             "outlineColor": [
                 255,
@@ -251,7 +251,7 @@
                 255
             ],
             "outlineSize": 0,
-            "roundness": 3
+            "roundness": 2
         },
         "mouseClickAnimation": {
             "type": "OUT_EXP",
@@ -683,13 +683,13 @@
                 0,
                 0,
                 0,
-                80
+                0
             ],
             "outlineColor": [
                 255,
                 255,
                 255,
-                255
+                0
             ],
             "outlineSize": 0,
             "roundness": 3
@@ -699,13 +699,13 @@
                 255,
                 255,
                 255,
-                80
+                0
             ],
             "outlineColor": [
                 255,
                 255,
                 255,
-                255
+                0
             ],
             "outlineSize": 0,
             "roundness": 3
@@ -998,26 +998,26 @@
     "Amaterasu": {
         "background": {
             "color": [
-                24,
-                24,
-                24,
-                80
+                17,
+                17,
+                20,
+                255
             ],
             "outlineColor": [
-                255,
-                255,
-                255,
-                80
+                45,
+                47,
+                116,
+                255
             ],
-            "outlineSize": 0.5,
-            "roundness": 5
+            "outlineSize": 1,
+            "roundness": 0
         },
         "line": {
             "color": [
-                35,
-                35,
-                35,
-                80
+                45,
+                47,
+                116,
+                255
             ],
             "size": 0.5,
             "outlineColor": [
@@ -1031,10 +1031,10 @@
         },
         "panel": {
             "leftColor": [
-                0,
-                0,
-                0,
-                0
+                22,
+                23,
+                25,
+                255
             ],
             "rightColor": [
                 0,
@@ -1045,10 +1045,10 @@
         },
         "scrollbar": {
             "color": [
-                255,
-                255,
-                255,
-                80
+                45,
+                47,
+                116,
+                255
             ]
         },
         "title": {
@@ -1056,7 +1056,7 @@
                 255,
                 255,
                 255,
-                255
+                0
             ],
             "scale": 1
         },
@@ -1080,9 +1080,9 @@
         "Text": {
             "text": {
                 "color": [
-                    255,
-                    255,
-                    255,
+                    241,
+                    243,
+                    244,
                     255
                 ],
                 "scale": 1
@@ -1095,13 +1095,13 @@
                 0,
                 0,
                 0,
-                80
+                0
             ],
             "outlineColor": [
                 255,
                 255,
                 255,
-                255
+                0
             ],
             "outlineSize": 0,
             "roundness": 3
@@ -1111,13 +1111,13 @@
                 255,
                 255,
                 255,
-                80
+                0
             ],
             "outlineColor": [
                 255,
                 255,
                 255,
-                255
+                0
             ],
             "outlineSize": 0,
             "roundness": 3,

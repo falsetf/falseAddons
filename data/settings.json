@@ -11,6 +11,11 @@
                 "type": 6,
                 "name": "dragonstfu",
                 "value": true
+            },
+            {
+                "type": 6,
+                "name": "runicfinder",
+                "value": false
             }
         ]
     },
@@ -36,6 +41,16 @@
                 "type": 6,
                 "name": "deathsound",
                 "value": true
+            }
+        ]
+    },
+    {
+        "category": "Kuudra",
+        "settings": [
+            {
+                "type": 6,
+                "name": "autopearl",
+                "value": false
             }
         ]
     },

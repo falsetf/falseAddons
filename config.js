@@ -16,6 +16,12 @@ config
         description: "mutes dragons in the end",
     })
     .addSwitch({
+        category: "General",
+        configName: "runicfinder",
+        title: "Runic Finder",
+        description: "finds runic mobs around you, primarily for the Runebook talisman",
+    })
+    .addSwitch({
         category: "Dungeons",
         configName: "m3ff",
         title: "M3 Fire Freeze Notification",
@@ -38,6 +44,12 @@ config
         configName: "deathsound",
         title: "Death Sound",
         description: "plays a quiet sound when anyone dies in dungeons, makes it easier to notice deaths",
+    })
+    .addSwitch({
+        category: "Kuudra",
+        configName: "autopearl",
+        title: "Auto GFS &c[UAYOR]",
+        description: "automatically refill your pearls at the end of the fight",
     })
     .addSwitch({
         category: "Party",

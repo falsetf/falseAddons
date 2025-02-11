@@ -50,7 +50,7 @@
             {
                 "type": 6,
                 "name": "autopearl",
-                "value": false
+                "value": true
             }
         ]
     },

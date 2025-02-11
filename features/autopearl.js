@@ -58,4 +58,4 @@ register("chat", () => {
     } else {
         return;
     }
-}).setChatCriteria("[NPC] Elle: Good job everyone. A hard fought battle come to an end. Let's get out of here before we run into any more trouble!")
+}).setChatCriteria("KUUDRA DOWN!").setContains(); // todo: make more secure
